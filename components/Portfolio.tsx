@@ -4,7 +4,7 @@ const projects = [
   {
     title: "E-Commerce Website",
     category: "Web Development",
-    image: "/images/project1.jpg",
+    image: "/images/Project1.jpg",
   },
   {
     title: "Finance Dashboard",
