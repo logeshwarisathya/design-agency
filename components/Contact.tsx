@@ -89,8 +89,8 @@ export default function Contact() {
 
             {/* Success Animation */}
             {submitted && (
-              <p className="text-green-500 text-center font-semibold animate-bounce">
-                ✅ Thank you! Your message has been sent.
+              <p className="text-[#6EC1D1]-500 text-center font-semibold animate-bounce">
+                 Thank you! Your message has been sent.
               </p>
             )}
           </form>
