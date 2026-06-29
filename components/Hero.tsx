@@ -8,15 +8,15 @@ export default function Hero() {
         {/* Left Content */}
         <div>
 
-          <p className="text-blue-400 font-semibold mb-3">
-            Creative Design Agency
-          </p>
+        <p className="text-[#6EC1D1] font-semibold mb-3">
+  Creative Design Agency
+</p>
 
           <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
             Build Digital
             <br />
             Experiences
-            <span className="text-blue-500"> That Inspire</span>
+            <span className="text-[#6EC1D1]">That Inspire</span>
           </h1>
 
           <p className="mt-6 text-gray-300 dark:text-gray-200 text-lg">
@@ -26,13 +26,17 @@ export default function Hero() {
 
           <div className="flex gap-4 mt-8">
 
-            <button className="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-              Get Started
-            </button>
-
-            <button className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-black transition">
-              View Work
-            </button>
+                    <button className="relative px-6 py-3 rounded-full bg-[#6EC1D1] text-black font-semibold 
+        transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(110,193,209,0.6)] 
+        active:translate-y-0 active:shadow-md">
+          Get Started
+        </button>
+        <button className="relative px-6 py-3 rounded-full bg-[#6EC1D1] text-black font-semibold
+        transition-all duration-300 transform hover:-translate-y-2 hover:scale-105
+        hover:shadow-[0_15px_35px_rgba(110,193,209,0.4)]
+        active:scale-95">
+          View Work
+        </button>
 
           </div>
 

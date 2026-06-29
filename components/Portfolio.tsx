@@ -27,11 +27,12 @@ export default function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="py-24 bg-white dark:bg-slate-950 transition-colors duration-300"
+      className="py-24 bg-white dark:bg-slate-950"
     >
       <div className="max-w-7xl mx-auto px-6">
-
-        <h2 className="text-4xl font-bold text-center text-black dark:text-white mb-4">
+        
+        {/* Heading */}
+        <h2 className="text-4xl font-bold text-center text-[#6EC1D1] dark:text-[#6EC1D1] mb-4">
           Featured Projects
         </h2>
 
@@ -39,41 +40,49 @@ export default function Portfolio() {
           A selection of our recent work.
         </p>
 
+        {/* Project Grid */}
         <div className="grid gap-8 md:grid-cols-2">
-
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-slate-800 transition duration-300"
+              className="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-lg transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_60px_rgba(110,193,209,0.35)]"
             >
-              <div className="overflow-hidden">
-
+              {/* Image */}
+              <div className="relative overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
                   width={600}
                   height={400}
-                  className="w-full h-auto max-h-72 object-cover group-hover:scale-110 transition duration-500"
+                  className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition duration-500"></div>
+
+                {/* Animated Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#6EC1D1]/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
               </div>
 
-              <div className="p-6">
+              {/* Content */}
+              <div className="p-6 relative">
+                
+                {/* Category Badge */}
+                <span className="inline-block px-4 py-2 rounded-full bg-[#6EC1D1]/10 text-[#6EC1D1] text-sm font-medium mb-4 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(110,193,209,0.5)]">
+                  {project.category}
+                </span>
 
-                <h3 className="text-2xl font-semibold text-black dark:text-white">
+                {/* Title */}
+                <h3 className="text-2xl font-semibold text-black dark:text-white transition-all duration-300 group-hover:text-[#6EC1D1] group-hover:translate-x-2">
                   {project.title}
                 </h3>
 
-                <p className="text-blue-600 mt-2">
-                  {project.category}
-                </p>
-
+                {/* Sliding line */}
+                <div className="mt-4 h-1 w-0 bg-[#6EC1D1] transition-all duration-500 group-hover:w-24"></div>
               </div>
             </div>
           ))}
-
         </div>
-
       </div>
     </section>
   );

@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setSubmitted(true);
   }
@@ -13,11 +13,12 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 bg-slate-100 dark:bg-slate-900 transition-colors duration-300"
+      className="py-24 bg-gray-50 dark:bg-slate-950"
     >
       <div className="max-w-3xl mx-auto px-6">
-
-        <h2 className="text-4xl font-bold text-center text-black dark:text-white mb-4">
+        
+        {/* Heading */}
+        <h2 className="text-4xl font-bold text-center text-[#6EC1D1] dark:text-[#6EC1D1] mb-4">
           Contact Us
         </h2>
 
@@ -25,62 +26,75 @@ export default function Contact() {
           Have a project in mind? We'd love to hear from you.
         </p>
 
-        <form
-          onSubmit={handleSubmit}
-          className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg space-y-6 transition-colors duration-300"
-        >
+        {/* Animated Form Container */}
+        <div className="relative group">
+          
+          {/* Glow Border */}
+          <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-[#6EC1D1] via-cyan-400 to-[#6EC1D1] blur-lg opacity-20 group-hover:opacity-40 transition duration-500"></div>
 
-          <div>
-            <label className="block mb-2 font-medium text-black dark:text-white">
-              Name
-            </label>
+          {/* Form */}
+          <form
+            onSubmit={handleSubmit}
+            className="relative bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-xl space-y-6 transition-all duration-500 hover:-translate-y-2"
+          >
+            {/* Name */}
+            <div>
+              <label className="block mb-2 font-medium text-black dark:text-white">
+                Name
+              </label>
 
-            <input
-              type="text"
-              required
-              placeholder="Enter your name"
-              className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-700 text-black dark:text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
-            />
-          </div>
+              <input
+                type="text"
+                required
+                placeholder="Enter your name"
+                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-700 text-black dark:text-white rounded-xl px-4 py-3 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#6EC1D1] focus:scale-[1.02]"
+              />
+            </div>
 
-          <div>
-            <label className="block mb-2 font-medium text-black dark:text-white">
-              Email
-            </label>
+            {/* Email */}
+            <div>
+              <label className="block mb-2 font-medium text-black dark:text-white">
+                Email
+              </label>
 
-            <input
-              type="email"
-              required
-              placeholder="Enter your email"
-              className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-700 text-black dark:text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
-            />
-          </div>
+              <input
+                type="email"
+                required
+                placeholder="Enter your email"
+                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-700 text-black dark:text-white rounded-xl px-4 py-3 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#6EC1D1] focus:scale-[1.02]"
+              />
+            </div>
 
-          <div>
-            <label className="block mb-2 font-medium text-black dark:text-white">
-              Message
-            </label>
+            {/* Message */}
+            <div>
+              <label className="block mb-2 font-medium text-black dark:text-white">
+                Message
+              </label>
 
-            <textarea
-              required
-              rows={5}
-              placeholder="Write your message..."
-              className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-700 text-black dark:text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
-            />
-          </div>
+              <textarea
+                required
+                rows={5}
+                placeholder="Write your message..."
+                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-700 text-black dark:text-white rounded-xl px-4 py-3 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#6EC1D1] focus:scale-[1.02]"
+              />
+            </div>
 
-          <button className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
-            Send Message
-          </button>
+            {/* Animated Button */}
+            <button className="relative overflow-hidden w-full bg-[#6EC1D1] text-black py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(110,193,209,0.5)]">
+              <span className="relative z-10">Send Message</span>
 
-          {submitted && (
-            <p className="text-green-500 text-center font-semibold">
-              ✅ Thank you! Your message has been sent.
-            </p>
-          )}
+              {/* Shine Effect */}
+              <div className="absolute inset-0 -translate-x-full bg-white/30 skew-x-12 transition-transform duration-700 hover:translate-x-full"></div>
+            </button>
 
-        </form>
-
+            {/* Success Animation */}
+            {submitted && (
+              <p className="text-green-500 text-center font-semibold animate-bounce">
+                ✅ Thank you! Your message has been sent.
+              </p>
+            )}
+          </form>
+        </div>
       </div>
     </section>
   );

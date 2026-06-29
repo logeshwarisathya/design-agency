@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="bg-slate-900 dark:bg-black text-white py-8 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 flex flex-col items-center text-center gap-4">
         
-        <h2 className="text-2xl font-bold text-white">
+        <h2 className="text-2xl font-bold text-[#6EC1D1]">
           PixelCraft
         </h2>
 

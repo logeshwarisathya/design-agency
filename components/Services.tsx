@@ -31,11 +31,12 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-24 bg-gray-100 dark:bg-slate-900 transition-colors duration-300"
+      className="py-24 bg-gray-50 dark:bg-slate-900"
     >
       <div className="max-w-7xl mx-auto px-6">
-
-        <h2 className="text-4xl font-bold text-center text-black dark:text-white mb-4">
+        
+        {/* Heading */}
+        <h2 className="text-4xl font-bold text-center text-[#6EC1D1] dark:text-[#6EC1D1] mb-4">
           Our Services
         </h2>
 
@@ -43,32 +44,42 @@ export default function Services() {
           We provide complete digital solutions for businesses.
         </p>
 
+        {/* Cards */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-
           {services.map((service, index) => {
             const Icon = service.icon;
 
             return (
               <div
                 key={index}
-                className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+                className="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-800 p-8 shadow-lg transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_50px_rgba(110,193,209,0.4)]"
               >
-                <Icon
-                  className="text-blue-600 mb-5"
-                  size={40}
-                />
+                {/* Animated Gradient Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#6EC1D1]/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
-                <h3 className="text-xl font-semibold text-black dark:text-white mb-3">
+                {/* Icon */}
+                <div className="relative z-10 mb-5 inline-flex p-4 rounded-xl bg-[#6EC1D1]/10 group-hover:bg-[#6EC1D1]/20 transition duration-500">
+                  <Icon
+                    className="text-[#6EC1D1] transition-transform duration-500 group-hover:rotate-12 group-hover:scale-125"
+                    size={40}
+                  />
+                </div>
+
+                {/* Title */}
+                <h3 className="relative z-10 text-xl font-semibold text-black dark:text-white mb-3 group-hover:text-[#6EC1D1] transition duration-300">
                   {service.title}
                 </h3>
 
-                <p className="text-gray-600 dark:text-gray-300">
+                {/* Description */}
+                <p className="relative z-10 text-gray-600 dark:text-gray-300 leading-relaxed">
                   {service.description}
                 </p>
+
+                {/* Bottom Border Animation */}
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#6EC1D1] transition-all duration-500 group-hover:w-full"></div>
               </div>
             );
           })}
-
         </div>
       </div>
     </section>

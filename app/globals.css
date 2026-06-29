@@ -26,3 +26,218 @@ textarea {
     color 0.3s ease,
     border-color 0.3s ease;
 }
+
+
+
+
+
+
+/* logo name */
+.logo-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text */
+.pixelcraft-title {
+  position: relative;
+  z-index: 10;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: black;
+
+  /* text-shadow:
+    0 0 2px white,
+    0 0 8px #6EC1D1,
+    0 0 16px #6EC1D1,
+    0 0 24px rgba(110,193,209,0.8); */
+
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* @keyframes pulse {
+  50% {
+    text-shadow:
+      0 0 3px white,
+      0 0 12px #6EC1D1,
+      0 0 22px #6EC1D1,
+      0 0 35px rgba(110,193,209,1);
+  }
+} */
+
+/* Orbit ring */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  pointer-events: none;
+}
+
+/* Rotation */
+.orbit1 {
+  width: 120px;
+  height: 120px;
+  margin-left: -60px;
+  margin-top: -60px;
+  animation: spin 6s linear infinite;
+}
+
+.orbit2 {
+  width: 160px;
+  height: 160px;
+  margin-left: -80px;
+  margin-top: -80px;
+  animation: spinReverse 8s linear infinite;
+}
+
+.orbit3 {
+  width: 200px;
+  height: 200px;
+  margin-left: -100px;
+  margin-top: -100px;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* Particle */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: #6EC1D1;
+
+  box-shadow:
+    0 0 8px #6EC1D1,
+    0 0 16px rgba(110,193,209,0.8),
+    0 0 28px rgba(110,193,209,0.6);
+}
+
+/* Orbit positions */
+.p1 { width: 8px; height: 8px; top: 0; left: 50%; }
+.p2 { width: 10px; height: 10px; bottom: 0; left: 50%; }
+.p3 { width: 6px; height: 6px; top: 50%; left: 0; }
+.p4 { width: 9px; height: 9px; top: 50%; right: 0; }
+.p5 { width: 7px; height: 7px; top: 15%; right: 15%; }
+.p6 { width: 7px; height: 7px; bottom: 15%; left: 15%; }
+.p7 { width: 6px; height: 6px; top: 20%; left: 20%; }
+.p8 { width: 8px; height: 8px; bottom: 20%; right: 20%; }
+/* ................................................. */
+
+
+
+/* hero button css */
+.uiverse-btn {
+  --radius: 14px;
+  --transition: 0.4s;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  padding: 12px 20px;
+
+  background: #6EC1D1; /* ✅ YOUR COLOR */
+  color: #0b0b0b;
+  font-weight: 600;
+
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: var(--radius);
+
+  cursor: pointer;
+  isolation: isolate;
+
+  transition: all var(--transition);
+
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,.25),
+    inset 0 4px 10px rgba(255,255,255,.08),
+    0 8px 18px rgba(110,193,209,0.35); /* ✅ updated glow */
+}
+
+/* Outer Glow */
+.uiverse-btn::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: calc(var(--radius) + 3px);
+  z-index: -2;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.25),
+    rgba(0,0,0,.25)
+  );
+
+  transition: 0.4s;
+}
+
+/* Shine Layer */
+.uiverse-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    120deg,
+    transparent 25%,
+    rgba(255,255,255,.6),
+    transparent 75%
+  );
+
+  transform: translateX(-140%);
+  transition: transform 0.8s ease;
+}
+
+/* Hover */
+.uiverse-btn:hover {
+  background: #5bb3c5; /* slightly darker shade of #6EC1D1 */
+  transform: translateY(-3px);
+
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,.3),
+    inset 0 8px 18px rgba(255,255,255,.08),
+    0 18px 40px rgba(110,193,209,0.55); /* glow updated */
+}
+
+/* Shine move */
+.uiverse-btn:hover::after {
+  transform: translateX(140%);
+}
+
+/* Glow on hover */
+.uiverse-btn:hover::before {
+  box-shadow:
+    0 0 25px rgba(110,193,209,.45),
+    0 0 50px rgba(110,193,209,.25);
+}
+
+/* Click effect */
+.uiverse-btn:active {
+  transform: scale(0.96);
+}
+
+
