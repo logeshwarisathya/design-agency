@@ -1,36 +1,226 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📦 Dependencies & Packages Used
 
-## Getting Started
+This project uses the following packages:
 
-First, run the development server:
+---
+
+## Core Framework
+
+### Next.js
+Used for building the application with server-side rendering, routing, and performance optimization.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install next react react-dom
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Purpose:
+- Routing
+- SEO optimization
+- Performance
+- App Router
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Styling
 
-## Learn More
+### Tailwind CSS v4
+Utility-first CSS framework for fast UI development.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install tailwindcss @tailwindcss/postcss postcss
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Purpose:
+- Responsive design
+- Faster styling
+- Utility classes
+- Dark mode
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Animations
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Framer Motion
+Used for smooth animations and transitions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm install framer-motion
+```
+
+Purpose:
+- Fade animations
+- Slide animations
+- Scale animations
+- Scroll animations
+
+Example:
+
+```jsx
+import { motion } from "framer-motion";
+```
+
+---
+
+## Icons
+
+### Lucide React
+Modern icon library.
+
+```bash
+npm install lucide-react
+```
+
+Purpose:
+- Navbar icons
+- Service icons
+- UI icons
+
+Example:
+
+```jsx
+import { Menu } from "lucide-react";
+```
+
+---
+
+### React Icons
+Additional icon collection.
+
+```bash
+npm install react-icons
+```
+
+Purpose:
+- Social media icons
+- Custom icons
+
+Example:
+
+```jsx
+import { FaGithub } from "react-icons/fa";
+```
+
+---
+
+## Theme Management
+
+### next-themes
+Used for dark/light mode switching.
+
+```bash
+npm install next-themes
+```
+
+Purpose:
+- Dark mode toggle
+- Theme persistence
+
+Example:
+
+```jsx
+import { ThemeProvider } from "next-themes";
+```
+
+---
+
+## Development Dependencies
+
+### TypeScript
+Adds type safety.
+
+```bash
+npm install typescript @types/react @types/node
+```
+
+Purpose:
+- Better code quality
+- Error detection
+- Type checking
+
+---
+
+## Recommended VS Code Extensions
+
+Install these for better development:
+
+### Tailwind CSS IntelliSense
+Provides Tailwind autocomplete.
+
+Extension:
+```bash
+Tailwind CSS IntelliSense
+```
+
+---
+
+### ES7+ React Snippets
+React shortcuts and snippets.
+
+Extension:
+```bash
+ES7+ React/Redux/React-Native snippets
+```
+
+---
+
+### Prettier
+Code formatter.
+
+Extension:
+```bash
+Prettier - Code formatter
+```
+
+---
+
+### Auto Rename Tag
+Automatically renames paired HTML tags.
+
+Extension:
+```bash
+Auto Rename Tag
+```
+
+---
+
+### Error Lens
+Highlights errors directly.
+
+Extension:
+```bash
+Error Lens
+```
+
+---
+
+### GitLens
+Better Git tracking.
+
+Extension:
+```bash
+GitLens
+```
+
+---
+
+### Path IntelliSense
+Auto-completes file paths.
+
+Extension:
+```bash
+Path IntelliSense
+```
+
+---
+
+## Install All Packages Together
+
+```bash
+npm install next react react-dom tailwindcss @tailwindcss/postcss postcss framer-motion lucide-react react-icons next-themes
+```
+
+For TypeScript:
+
+```bash
+npm install -D typescript @types/react @types/node
+```
