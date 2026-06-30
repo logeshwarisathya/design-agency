@@ -11,6 +11,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body,
@@ -27,61 +28,79 @@ textarea {
     border-color 0.3s ease;
 }
 
-/* navbar */
+/* ========================================================= */
+/* LOGO */
+/* ========================================================= */
 
-
-
-
-/* logo name */
 .logo-container {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
-/* Text */
 .pixelcraft-title {
   position: relative;
   z-index: 10;
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: black;
 
-   animation: pulse 2s infinite ease-in-out;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  font-weight: 900;
+
+  color: black;
+  white-space: nowrap;
+
+  animation: pulse 2s infinite ease-in-out;
 }
 
-/* Orbit ring */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ========================================================= */
+/* ORBITS */
+/* ========================================================= */
+
 .orbit {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform-origin: center center;
+  transform-origin: center;
   pointer-events: none;
 }
 
-/* Rotation */
 .orbit1 {
-  width: 120px;
-  height: 120px;
-  margin-left: -60px;
-  margin-top: -60px;
+  width: 110px;
+  height: 110px;
+  margin-left: -55px;
+  margin-top: -55px;
   animation: spin 6s linear infinite;
 }
 
 .orbit2 {
-  width: 160px;
-  height: 160px;
-  margin-left: -80px;
-  margin-top: -80px;
+  width: 150px;
+  height: 150px;
+  margin-left: -75px;
+  margin-top: -75px;
   animation: spinReverse 8s linear infinite;
 }
 
 .orbit3 {
-  width: 200px;
-  height: 200px;
-  margin-left: -100px;
-  margin-top: -100px;
+  width: 185px;
+  height: 185px;
+  margin-left: -92.5px;
+  margin-top: -92.5px;
   animation: spin 10s linear infinite;
 }
 
@@ -89,6 +108,7 @@ textarea {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -98,12 +118,16 @@ textarea {
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }
 }
 
-/* Particle */
+/* ========================================================= */
+/* PARTICLES */
+/* ========================================================= */
+
 .particle {
   position: absolute;
   border-radius: 50%;
@@ -111,24 +135,70 @@ textarea {
 
   box-shadow:
     0 0 8px #6EC1D1,
-    0 0 16px rgba(110,193,209,0.8),
-    0 0 28px rgba(110,193,209,0.6);
+    0 0 16px rgba(110, 193, 209, 0.8),
+    0 0 28px rgba(110, 193, 209, 0.6);
 }
 
-/* Orbit positions */
-.p1 { width: 8px; height: 8px; top: 0; left: 50%; }
-.p2 { width: 10px; height: 10px; bottom: 0; left: 50%; }
-.p3 { width: 6px; height: 6px; top: 50%; left: 0; }
-.p4 { width: 9px; height: 9px; top: 50%; right: 0; }
-.p5 { width: 7px; height: 7px; top: 15%; right: 15%; }
-.p6 { width: 7px; height: 7px; bottom: 15%; left: 15%; }
-.p7 { width: 6px; height: 6px; top: 20%; left: 20%; }
-.p8 { width: 8px; height: 8px; bottom: 20%; right: 20%; }
-/* ................................................. */
+.p1 {
+  width: 8px;
+  height: 8px;
+  top: 0;
+  left: 50%;
+}
 
+.p2 {
+  width: 10px;
+  height: 10px;
+  bottom: 0;
+  left: 50%;
+}
 
+.p3 {
+  width: 6px;
+  height: 6px;
+  top: 50%;
+  left: 0;
+}
 
-/* hero button css */
+.p4 {
+  width: 9px;
+  height: 9px;
+  top: 50%;
+  right: 0;
+}
+
+.p5 {
+  width: 7px;
+  height: 7px;
+  top: 15%;
+  right: 15%;
+}
+
+.p6 {
+  width: 7px;
+  height: 7px;
+  bottom: 15%;
+  left: 15%;
+}
+
+.p7 {
+  width: 6px;
+  height: 6px;
+  top: 20%;
+  left: 20%;
+}
+
+.p8 {
+  width: 8px;
+  height: 8px;
+  bottom: 20%;
+  right: 20%;
+}
+
+/* ========================================================= */
+/* BUTTON */
+/* ========================================================= */
+
 .uiverse-btn {
   --radius: 14px;
   --transition: 0.4s;
@@ -136,37 +206,44 @@ textarea {
   position: relative;
   overflow: hidden;
 
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 
-  width: 100%;
+  width: auto;
+  min-width: 140px;
+
   padding: 12px 20px;
 
-  background: #6EC1D1; /* ✅ YOUR COLOR */
+  background: #6EC1D1;
   color: #0b0b0b;
+
   font-weight: 600;
 
-  border: 1px solid rgba(255,255,255,.25);
+  border: 1px solid rgba(255, 255, 255, .25);
   border-radius: var(--radius);
 
   cursor: pointer;
+
   isolation: isolate;
 
   transition: all var(--transition);
 
   box-shadow:
-    inset 0 1px 1px rgba(255,255,255,.25),
-    inset 0 4px 10px rgba(255,255,255,.08),
-    0 8px 18px rgba(110,193,209,0.35); /* ✅ updated glow */
+    inset 0 1px 1px rgba(255, 255, 255, .25),
+    inset 0 4px 10px rgba(255, 255, 255, .08),
+    0 8px 18px rgba(110, 193, 209, .35);
 }
 
-/* Outer Glow */
 .uiverse-btn::before {
   content: "";
+
   position: absolute;
+
   inset: -3px;
+
   border-radius: calc(var(--radius) + 3px);
+
   z-index: -2;
 
   background: linear-gradient(
@@ -175,14 +252,16 @@ textarea {
     rgba(0,0,0,.25)
   );
 
-  transition: 0.4s;
+  transition: .4s;
 }
 
-/* Shine Layer */
 .uiverse-btn::after {
   content: "";
+
   position: absolute;
+
   inset: 0;
+
   border-radius: inherit;
 
   background: linear-gradient(
@@ -193,35 +272,106 @@ textarea {
   );
 
   transform: translateX(-140%);
-  transition: transform 0.8s ease;
+  transition: transform .8s ease;
 }
 
-/* Hover */
 .uiverse-btn:hover {
-  background: #5bb3c5; /* slightly darker shade of #6EC1D1 */
+  background: #5bb3c5;
+
   transform: translateY(-3px);
 
   box-shadow:
     inset 0 1px 2px rgba(255,255,255,.3),
     inset 0 8px 18px rgba(255,255,255,.08),
-    0 18px 40px rgba(110,193,209,0.55); /* glow updated */
+    0 18px 40px rgba(110,193,209,.55);
 }
 
-/* Shine move */
 .uiverse-btn:hover::after {
   transform: translateX(140%);
 }
 
-/* Glow on hover */
 .uiverse-btn:hover::before {
   box-shadow:
     0 0 25px rgba(110,193,209,.45),
     0 0 50px rgba(110,193,209,.25);
 }
 
-/* Click effect */
 .uiverse-btn:active {
-  transform: scale(0.96);
+  transform: scale(.96);
 }
 
+/* ========================================================= */
+/* RESPONSIVE */
+/* ========================================================= */
 
+@media (max-width: 768px) {
+
+  .pixelcraft-title {
+    font-size: 2rem;
+  }
+
+  .orbit1 {
+    width: 90px;
+    height: 90px;
+    margin-left: -45px;
+    margin-top: -45px;
+  }
+
+  .orbit2 {
+    width: 120px;
+    height: 120px;
+    margin-left: -60px;
+    margin-top: -60px;
+  }
+
+  .orbit3 {
+    width: 150px;
+    height: 150px;
+    margin-left: -75px;
+    margin-top: -75px;
+  }
+
+  .particle {
+    transform: scale(.85);
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .pixelcraft-title {
+    font-size: 1.5rem;
+  }
+
+  .orbit1 {
+    width: 65px;
+    height: 65px;
+    margin-left: -32.5px;
+    margin-top: -32.5px;
+  }
+
+  .orbit2 {
+    width: 90px;
+    height: 90px;
+    margin-left: -45px;
+    margin-top: -45px;
+  }
+
+  .orbit3 {
+    width: 115px;
+    height: 115px;
+    margin-left: -57.5px;
+    margin-top: -57.5px;
+  }
+
+  .particle {
+    transform: scale(.7);
+  }
+
+  .uiverse-btn {
+    min-width: 110px;
+    padding: 10px 16px;
+    font-size: .9rem;
+  }
+
+}
