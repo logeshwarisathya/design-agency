@@ -27,7 +27,7 @@ textarea {
     border-color 0.3s ease;
 }
 
-
+/* navbar */
 
 
 
@@ -48,24 +48,8 @@ textarea {
   font-weight: 900;
   color: black;
 
-  /* text-shadow:
-    0 0 2px white,
-    0 0 8px #6EC1D1,
-    0 0 16px #6EC1D1,
-    0 0 24px rgba(110,193,209,0.8); */
-
-  animation: pulse 2s infinite ease-in-out;
+   animation: pulse 2s infinite ease-in-out;
 }
-
-/* @keyframes pulse {
-  50% {
-    text-shadow:
-      0 0 3px white,
-      0 0 12px #6EC1D1,
-      0 0 22px #6EC1D1,
-      0 0 35px rgba(110,193,209,1);
-  }
-} */
 
 /* Orbit ring */
 .orbit {
